@@ -1,4 +1,4 @@
-projectEuler
+Some Haskell Shenanigans
 ============
 
-Project Euler Implementation In Haskell
+

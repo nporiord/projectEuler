@@ -8,8 +8,8 @@ module Euler
 
 import Data.List
  
-p4 :: Int -> [Int]
-p4 rangeUpper = nub [x * y | x <- [rangeUpper,rangeUpper-1..100], y <- [rangeUpper,rangeUpper-1..100], p4_isPalindrome (x * y)]
+p4 :: Int -> Int
+p4 rangeUpper = maximum [x * y | x <- [rangeUpper,rangeUpper-1..100], y <- [rangeUpper,rangeUpper-1..100], p4_isPalindrome (x * y)]
 
 p4_isPalindrome :: Int -> Bool
 p4_isPalindrome number = reverse (show number) == show number
