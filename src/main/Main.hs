@@ -9,6 +9,10 @@ import Euler
 test4_1 = TestCase ( assertEqual "4_1" 10201 (Euler.p4 102))
 test4_2 = TestCase ( assertEqual "4_2" 906609 (Euler.p4 999))
 
+-- Question 3 -
+test3_1 = TestCase ( assertEqual "3_1" [1,2,3,5,7] (Euler.p3_sieve 2 10 [1..10]))
+test3_2 = TestCase ( assertEqual "3_2" [1,2,3,5,7,11,13,17,19] (Euler.p3_sieve 2 100000 [1..100000]))
+
 -- Question 2 - 
 test2_1 = TestCase ( assertEqual "2_1" 10 (Euler.p2 10))
 test2_2 = TestCase ( assertEqual "2_2" 44 (Euler.p2 100))
@@ -39,6 +43,8 @@ tests = TestList [
 	, TestLabel "test2_5" test2_5
 	, TestLabel "test2_6" test2_6
 	, TestLabel "test2_7" test2_7
+	, TestLabel "test3_1" test3_1
+	, TestLabel "test3_2" test3_2
 	, TestLabel "test4_1" test4_1
 	, TestLabel "test4_2" test4_2
 	]

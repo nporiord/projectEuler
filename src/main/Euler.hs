@@ -1,13 +1,26 @@
 module Euler 
 ( p1
   , p2
-  , p3
+  , p3_sieve
   , p4
   , p4_isPalindrome
 ) where
 
 import Data.List
+import Debug.Trace
  
+ 
+--
+--p3 :: Int -> Int
+--p3 number = p3_sieve 1 number [1..number]
+
+p3_sieve :: Int -> Int -> [Int] -> [Int]
+p3_sieve number limit list 
+	| number > limit = list
+	| otherwise = p3_sieve (number + 1) limit (filter (\x -> x == number || x `mod` number > 0) list)
+
+	
+-- palindrome factors
 p4 :: Int -> Int
 p4 rangeUpper = maximum [x * y | x <- [rangeUpper,rangeUpper-1..100], y <- [rangeUpper,rangeUpper-1..100], p4_isPalindrome (x * y)]
 
@@ -46,4 +59,3 @@ p1_1 limit = ( filter (\x -> x `mod` 3 == 0 || x `mod` 5 == 0) [1..limit-1])
 
 sumFold :: [Int] -> Int
 sumFold = foldl (+) 0 
-
